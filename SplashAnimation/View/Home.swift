@@ -9,19 +9,14 @@ import SwiftUI
 
 struct Home: View {
     var body: some View {
-        
-        NavigationView{
-            
+        NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
-                
-                VStack(spacing: 20){
-                    
-                    ForEach(1...5,id: \.self){index in
-                        
+                VStack(spacing: 20) {
+                    ForEach(1...5, id: \ .self) { index in
                         Image("Pic\(index)")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: getRect().width - 30, height: 220)
+                            .frame(width: UIScreen.main.bounds.width - 30, height: 220)
                             .cornerRadius(15)
                     }
                 }
