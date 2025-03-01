@@ -146,5 +146,5 @@ struct SplashShape: Shape{
 
 
 #Preview {
-    ContentView()
+    SplashScreen(endAnimation: .constant(false))
 }
