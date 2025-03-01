@@ -29,7 +29,15 @@ struct ContentView: View {
                     // Círculo rojo (animación del ratón)
                     Circle()
                         .trim(from: 0, to: startCircleAnimation ? 1 : 0)
-                        .stroke(Color.red, style: StrokeStyle(lineWidth: 20, lineCap: .round))
+                        /*.stroke(Color.red, style: StrokeStyle(lineWidth: 20, lineCap: .round))*/
+                        .stroke(
+                            LinearGradient(
+                                gradient: Gradient(colors: [Color.red, Color.orange]), // Degradado de rojo a naranja
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ),
+                            style: StrokeStyle(lineWidth: 20, lineCap: .round)
+                        )
                         .frame(width: 250, height: 250)
                         .rotationEffect(.degrees(-30))
                         .animation(.easeOut(duration: 1), value: startCircleAnimation)

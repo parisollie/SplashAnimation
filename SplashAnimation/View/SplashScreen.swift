@@ -21,7 +21,15 @@ struct SplashScreen: View {
             // Mouse Shape - Circle forming the mouse body
             MouseShape()
                 .trim(from: 0, to: startAnimation ? 1 : 0)
-                .stroke(Color.red, style: StrokeStyle(lineWidth: 20, lineCap: .round))
+                //.stroke(Color.red, style: StrokeStyle(lineWidth: 20, lineCap: .round))
+                .stroke(
+                    LinearGradient(
+                        gradient: Gradient(colors: [Color.red, Color.orange]), // Degradado de rojo a naranja
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ),
+                    style: StrokeStyle(lineWidth: 20, lineCap: .round)
+                )
                 .frame(width: 250, height: 250)
                 .rotationEffect(.degrees(-30))
             
