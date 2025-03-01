@@ -1,4 +1,4 @@
-# SpalshScreen App 
+# SplashScreen App 
 
 A new iOS project.
 
